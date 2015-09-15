@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Socket.IO chat</title>
+    <meta charset="utf-8" />
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
@@ -14,7 +15,21 @@
     </style>
   </head>
   <body>
-    <ul id="messages"></ul>
+    <table border='0' width='100%'>
+      <tr>
+        <!--影片位置 -->
+         <td width='55%' valign='top'>
+            <video width='100%' autoplay>
+              <source src="http://192.168.254.194:8280/" type="video/mp4"/>
+            </video>
+         </td>
+         <!-- 聊天室 -->
+         <td width='45%' valign='top'>
+            <ul id="messages"></ul> 
+         </td>
+      </tr>
+    </table>
+    <!-- <ul id="messages"></ul> -->
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>

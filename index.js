@@ -1,13 +1,14 @@
-var app = require('express')();
+var app = require('/home/ho/node-v0.12.7/node_modules/express')();
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var io = require('/home/ho/node-v0.12.7/node_modules/socket.io')(http);
 
+//Load index.html Template
 app.get('/', function(req, res){
   //res.send('<h1>Hello world</h1>');
   res.sendFile(__dirname + '/index.html');
   //res.sendFile('index.html');
 });
-
+/* webchat code */
 io.on('connection',function(socket){
      /*console.log('a user connected');*/
      /* Start slogn */
@@ -26,7 +27,6 @@ io.on('connection',function(socket){
          io.emit('chat message', socket.username+" say: "+msg);
      });
 });
-
 
 http.listen(8181, function(){
   console.log('listening on *:8181');
